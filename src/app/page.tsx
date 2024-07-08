@@ -16,7 +16,7 @@ type FormInputs = {
 };
 
 export default function Home() {
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const {
     handleSubmit,
@@ -35,7 +35,7 @@ export default function Home() {
   });
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    setErrorMessage("");
+    // setErrorMessage("");
     const { firstName, lastName, email, queryType, message, consent } = data;
 
     // window.location.replace('/');
@@ -54,6 +54,7 @@ export default function Home() {
                   <span className="ml-2 text-Green-600">*</span>
                 </span>
                 <input
+                  autoFocus
                   type="text"
                   className={clsx(
                     "text-black border border-gray-300 w-full px-3 py-2 rounded-md hover:cursor-pointer hover:border-Green-600",
@@ -77,7 +78,7 @@ export default function Home() {
                   className={clsx(
                     "text-black border border-gray-300 w-full px-3 py-2 rounded-md hover:cursor-pointer hover:border-Green-600",
                     {
-                      "border-red-500": !!errors.firstName,
+                      "border-red-500": !!errors.lastName,
                     }
                   )}
                   {...register("lastName", { required: true })}
@@ -153,10 +154,13 @@ export default function Home() {
                 Message
                 <span className="ml-2 text-Green-600">*</span>
               </span>
-              <input
-                type="textarea"
-                className="required h-48 text-black border border-gray-300 w-full px-3 py-2 mb-4 rounded-md
-                  hover:cursor-pointer hover:border-Green-600"
+              <textarea
+                className={clsx(
+                  "required h-48 text-black border border-gray-300 w-full px-3 py-2 mb-4 rounded-md hover:cursor-pointer hover:border-Green-600",
+                  {
+                    "border-red-500": !!errors.message,
+                  }
+                )}
                 {...register("message", { required: true })}
               />
               {errors.message?.type === "required" && (
