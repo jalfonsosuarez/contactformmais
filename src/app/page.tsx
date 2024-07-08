@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -100,7 +100,7 @@ export default function Home() {
                   className="form-check-label font-[16px]"
                 >
                   I consent to being contacted by the team
-                  <span className="text-Green-600">*</span>
+                  <span className="ml-1 text-Green-600">*</span>
                 </label>
               </div>
             </div>
@@ -112,6 +112,20 @@ export default function Home() {
           </form>
         </div>
       </section>
+      <div className="text-center font-[11px]">
+        <span>Challenge by </span>
+        <Link
+          className="font-bold"
+          href={"https://www.frontendmentor.io?ref=challenge"}
+          target="_blank"
+        >
+          Frontend Mentor
+        </Link>
+        <span> Code by </span>
+        <Link className="text-Violet-blue font-bold" href={"#"}>
+          José A. Suárez
+        </Link>
+      </div>
     </main>
   );
 }
