@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="container bg-white text-black w-full h-screen mx-auto">
-      <section className="w-[375px] md:w-[1440px] bg-Green-200 px-1 py-2 content-center">
+    <main className="bg-white sm:bg-Green-200 text-black w-full h-screen">
+      <section className="w-[375px] md:w-[1440px] bg-Green-200 px-1 py-2 sm:mx-auto">
         <div className="bg-White rounded-2xl my-4 mx-3 py-3 px-4">
           <h1 className="text-3xl font-bold mt-5 mb-5">Contact Us</h1>
           <form action="">
@@ -100,7 +100,7 @@ export default function Home() {
                   className="form-check-label font-[16px]"
                 >
                   I consent to being contacted by the team
-                  <span className="ml-1 text-Green-600">*</span>
+                  <span className="text-Green-600">*</span>
                 </label>
               </div>
             </div>
